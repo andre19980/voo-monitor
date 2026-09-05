@@ -1,0 +1,21 @@
+name: Monitor voos
+
+on:
+  schedule:
+    - cron: '0 12 * * *'
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: node monitor.mjs
+        env:
+          COMPOSIO_API_URL: ${{ secrets.COMPOSIO_API_URL }}
+          COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+          COMPOSIO_ORG_ID: ${{ secrets.COMPOSIO_ORG_ID }}
+          COMPOSIO_PROJECT_ID: ${{ secrets.COMPOSIO_PROJECT_ID }}
+          COMPOSIO_USER_ID: ${{ secrets.COMPOSIO_USER_ID }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
