@@ -1,6 +1,6 @@
 # voo-monitor
 
-Automatização para monitorar preços de passagens aéreas **São Paulo ↔ Rio de Janeiro (fev/2027)** e registrar os valores em um banco de dados no Notion.
+Automatização para monitorar preços de passagens aéreas e registrar os valores em um banco de dados no Notion.
 
 ## Como funciona
 
